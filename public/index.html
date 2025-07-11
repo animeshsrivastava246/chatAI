@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>chatAI</title>
+		<link rel="stylesheet" href="../src/css/styles.css" />
+	</head>
+	<body>
+		<div class="chat-container">
+			<div id="chat-box" class="chat-box" aria-live="polite"></div>
+			<div id="spinner" class="spinner" hidden>…</div>
+			<div class="input-area">
+				<input
+					id="user-input"
+					type="text"
+					placeholder="Type your message…"
+					aria-label="Message input"
+				/>
+				<button id="send-btn">Send</button>
+			</div>
+		</div>
+
+		<script type="module" src="../src/js/chat.js"></script>
+	</body>
+</html>
