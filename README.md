@@ -1,15 +1,22 @@
 # chatAI
 
+A pure-frontend chat app that calls GitHub’s Models Marketplace API directly.
+
 ## Setup
 
-1. Clone this repo
-2. Fill in `src/config.js` with your real API_BASE and auth headers
-3. Serve `public/index.html` (e.g. via `live-server` or as static assets)
+1. Replace `GITHUB_TOKEN` and `MODEL_SLUG` in `src/config.js`.
+2. Serve `public/index.html` (e.g. via `live-server` or GitHub Pages).
 
-## Deploy
+## Security Warning
 
-- Build step isn’t required since we’re shipping plain JS/CSS, but you can
-  integrate a bundler (Webpack/Vite) if you want to tree-shake or
-  transpile.
-- CI/CD: On each push, you can lint, test (if you add tests), then
-  deploy `public/` + `src/` to GitHub Pages, Netlify, Vercel, etc.
+Putting a GitHub token in client-side JS _exposes it to everyone_. For a real production app, you should proxy requests through a server that holds the secret.
+
+## Deployment
+
+Since it’s plain HTML/CSS/JS, you can host on GitHub Pages, Netlify, Vercel, etc. Set up your CI/CD in GitHub to:
+
+- Lint (`eslint`)
+- Build (if you add bundling)
+- Deploy `public/` and `src/`
+
+Enjoy your zero-backend AI chat!

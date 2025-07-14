@@ -1,11 +1,12 @@
 /**
- * Fill these in with your real backend endpoint
- * and any auth tokens (in prod, inject via env vars)
+ * You must create a GitHub Personal Access Token that has
+ * the `models/completions` scope enabled.
+ *
+ * WARNING: Placing a secret in frontend code makes it
+ * visible to anyone who inspects your bundle.
  */
 export const CONFIG = {
-	API_BASE: "https://your-backend.example.com/api",
-	// If you need headers like Authorization, add here:
-	AUTH_HEADERS: {
-		Authorization: "Bearer YOUR_TOKEN_HERE",
-	},
+	GITHUB_TOKEN: "ghp_YOUR_PERSONAL_ACCESS_TOKEN",
+	// model slug from the Marketplace, e.g. "openai/gpt-3.5-turbo"
+	MODEL_SLUG: "openai/gpt-3.5-turbo",
 };

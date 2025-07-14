@@ -9,36 +9,34 @@ import {
 
 const STORAGE_KEY = "chatAI.history";
 
-// load chat history on startup
+// Load and render chat history
 function loadHistory() {
 	const hist = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-	hist.forEach(({ text, sender }) => appendMessage(text, sender));
-	return hist;
+	hist.forEach((msg) => appendMessage(msg.text, msg.sender));
 }
 
-// save a single message to storage
+// Save a message to localStorage
 function saveMessage(text, sender) {
 	const hist = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
 	hist.push({ text, sender, timestamp: Date.now() });
 	localStorage.setItem(STORAGE_KEY, JSON.stringify(hist));
 }
 
+// Handle send button or Enter key
 async function handleSend() {
 	const input = document.getElementById("user-input");
-	const msg = input.value.trim();
-	if (!msg) return;
+	const text = input.value.trim();
+	if (!text) return;
 
-	// disable input while processing
 	setSendEnabled(false);
-	appendMessage(msg, "user");
-	saveMessage(msg, "user");
+	appendMessage(text, "user");
+	saveMessage(text, "user");
 	input.value = "";
 
 	showSpinner();
 	try {
-		// include entire history for context
+		// rebuild "messages" array from history for full context
 		const history = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-		// map to format your backend expects
 		const messages = history.map((h) => ({
 			role: h.sender === "user" ? "user" : "assistant",
 			content: h.text,
@@ -55,7 +53,7 @@ async function handleSend() {
 	}
 }
 
-// initialize
+// Initialize on DOM ready
 document.addEventListener("DOMContentLoaded", () => {
 	loadHistory();
 	bindSend(handleSend);
