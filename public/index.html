@@ -1,26 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<title>chatAI</title>
-		<link rel="stylesheet" href="../src/css/styles.css" />
-	</head>
-	<body>
-		<div class="chat-container">
-			<div id="chat-box" class="chat-box" aria-live="polite"></div>
-			<div id="spinner" class="spinner" hidden>Loading…</div>
-			<div class="input-area">
-				<input
-					id="user-input"
-					type="text"
-					placeholder="Type your message…"
-					aria-label="Message input"
-				/>
-				<button id="send-btn">Send</button>
-			</div>
-		</div>
 
-		<script type="module" src="../src/js/chat.js"></script>
-	</body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- SEO Meta Tags -->
+	<title>ChatAI – Smart AI Chat Assistant</title>
+	<meta name="description"
+		content="ChatAI is your intelligent assistant that responds to your questions instantly using advanced AI technology." />
+	<meta name="keywords" content="AI Chat, Chatbot, Smart Assistant, GPT, NLP, ChatAI" />
+	<meta name="author" content="YourCompanyName" />
+
+	<!-- Open Graph for Social Sharing -->
+	<!-- Replace with your actual image and URL -->
+	<meta property="og:title" content="ChatAI – Smart AI Chat Assistant" />
+	<meta property="og:description" content="Talk to your AI assistant in real-time." />
+	<meta property="og:image" content="<!-- /path/to/preview-image.png -->" />
+	<meta property="og:url" content="<!-- https://yourdomain.com -->" />
+	<meta property="og:type" content="website" />
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="ChatAI – Smart AI Chat Assistant" />
+	<meta name="twitter:description" content="Talk to your AI assistant in real-time." />
+	<meta name="twitter:image" content="<!-- /path/to/twitter-preview.png -->" />
+
+	<!-- Favicon -->
+	<!-- Add your favicon path -->
+	<link rel="icon" href="<!-- /path/to/favicon.ico -->" type="image/x-icon" />
+
+	<!-- CSS Styles -->
+	<!-- Add your stylesheet path -->
+	<link rel="stylesheet" href="<!-- /path/to/styles.css -->" />
+
+	<!-- Optional: Preconnect to font or API domains -->
+	<!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+</head>
+
+<body>
+	<header>
+		<h1>ChatAI</h1>
+		<p class="subtitle">Your Smart AI Chat Assistant</p>
+	</header>
+
+	<main class="chat-container" role="main">
+		<section id="chat-box" class="chat-box" aria-live="polite"></section>
+
+		<div id="spinner" class="spinner" hidden aria-hidden="true">Loading…</div>
+
+		<form class="input-area" id="chat-form" autocomplete="off">
+			<label for="user-input" class="visually-hidden">Type your message</label>
+			<input id="user-input" type="text" placeholder="Type your message…" aria-label="Message input" required />
+			<button id="send-btn" type="submit" aria-label="Send message">Send</button>
+		</form>
+	</main>
+
+	<footer>
+		<p>&copy; <span id="year"></span> ChatAI. All rights reserved.</p>
+	</footer>
+
+	<!-- JavaScript -->
+	<!-- Add your JavaScript path -->
+	<script type="module" src="<!-- /path/to/chat.js -->" defer></script>
+
+	<!-- Dynamic year script -->
+	<script>
+		document.getElementById('year').textContent = new Date().getFullYear();
+	</script>
+</body>
 </html>
