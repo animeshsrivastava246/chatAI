@@ -9,4 +9,5 @@ export const CONFIG = {
 	GITHUB_TOKEN: "ghp_YOUR_PERSONAL_ACCESS_TOKEN",
 	// model slug from the Marketplace, e.g. "openai/gpt-3.5-turbo"
 	MODEL_SLUG: "openai/gpt-3.5-turbo",
+	// Need to add a key from github/marketplace, and allow the user to enter the key manually such that it works if the key is discarded!
 };
