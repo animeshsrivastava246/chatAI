@@ -20,3 +20,5 @@ Since it’s plain HTML/CSS/JS, you can host on GitHub Pages, Netlify, Vercel, e
 - Deploy `public/` and `src/`
 
 Enjoy your zero-backend AI chat!
+
+This will currently be using perplexity api keys!
